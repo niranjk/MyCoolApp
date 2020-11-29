@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
             }
             imageView.setImageResource(drawable)
             Toast.makeText(this, "Random Icon Generated.", Toast.LENGTH_SHORT).show()
-            // simple modification
         }
     }
 }
