@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyCoolApp</string>
+    <string name="random_icon_generator">Random Icon Generator</string>
+</resources>
