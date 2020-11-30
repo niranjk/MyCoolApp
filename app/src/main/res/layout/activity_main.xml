@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTxt"
+        android:background="@color/purple_700"
+        android:layout_margin="@dimen/margin_15dp"
+        />
+
     <TextView
         android:id="@+id/titleTxt"
         android:layout_width="wrap_content"
@@ -15,6 +25,7 @@
         android:textColor="@color/purple_700"
         android:textSize="@dimen/textSize_30sp"
         android:textStyle="bold"
+        android:padding="@dimen/padding_20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -46,5 +57,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.515" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_dialog_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="450dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
