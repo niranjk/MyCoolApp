@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.InfoFragment">
+
+    <data>
+        <variable
+            name="Person"
+            type="com.niranjan.mycoolapp.model.Person" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/infoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/personal_information"
+            android:gravity="center"
+            android:textSize="@dimen/textSize_30sp"
+            android:textColor="@color/teal_700"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Name"
+            android:text="@={Person.name}"
+            android:textSize="@dimen/textSize_30sp"
+            android:inputType="textPersonName"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/nickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Nickname"
+            android:text="@={Person.nickName}"
+            android:textSize="@dimen/textSize_30sp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textAlignment="center"/>
+
+
+    </LinearLayout>
+
+</layout>

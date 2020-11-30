@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MyCoolApp</string>
     <string name="random_icon_generator">Random Icon Generator</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="what_is_your_nickname">What is your NickName?</string>
+    <string name="add_your_info">Add Your Info:</string>
+    <string name="what_is_your_name">What is your Name?</string>
+    <string name="done">Done</string>
+    <string name="personal_information">Personal Information:</string>
 </resources>

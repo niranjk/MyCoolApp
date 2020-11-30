@@ -6,7 +6,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.niranjan.mycoolapp.databinding.ActivityMainBinding
+import com.niranjan.mycoolapp.fragment.HomeFragment
+import com.niranjan.mycoolapp.fragment.InfoFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
@@ -15,35 +19,26 @@ class MainActivity : AppCompatActivity() {
     // lateinit var button: Button
 
     lateinit var binding : ActivityMainBinding
+    private var fragmentStack = ArrayList<Fragment?>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        setRandomIconForImageView()
+        setContentView(R.layout.activity_main)
+        pushFragment(HomeFragment())
     }
 
-    private fun setRandomIconForImageView() {
-        // button = findViewById(R.id.generateBtn)
-        // 1. Data Binding
-        binding.floatingActionButton.setOnClickListener {
-            Toast.makeText(this, "Clicked Floating Action Info Button: Data Binding", Toast.LENGTH_LONG).show()
-        }
+    private fun pushFragment(newFragment: Fragment){
+        fragmentStack.clear()
+        supportFragmentManager.popBackStack(
+            null,
+            FragmentManager.POP_BACK_STACK_INCLUSIVE
+        )
+        supportFragmentManager
+            .beginTransaction().replace(R.id.fragment_container, newFragment)
+            .addToBackStack(null).commit()
+    }
 
-        // 2. Kotlin Synthetic Library.
-        generateBtn.setOnClickListener {
-
-            var randomNumber = Random.nextInt(4)+1
-            var drawable= when(randomNumber){
-                1 -> R.drawable.ic_random_1
-                2 -> R.drawable.ic_random_2
-                3 -> R.drawable.ic_random_3
-                4 -> R.drawable.ic_random_4
-                else -> R.drawable.ic_launcher_background
-            }
-            imageView.setImageResource(drawable)
-            Toast.makeText(this, "Random Icon Generated.", Toast.LENGTH_SHORT).show()
-        }
+    fun pushInfoFragment(){
+        pushFragment(InfoFragment())
     }
 }
