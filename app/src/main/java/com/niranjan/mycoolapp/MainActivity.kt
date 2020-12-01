@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.niranjan.mycoolapp.databinding.ActivityMainBinding
+import com.niranjan.mycoolapp.fragment.BoxFragment
 import com.niranjan.mycoolapp.fragment.HomeFragment
 import com.niranjan.mycoolapp.fragment.InfoFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -40,5 +41,9 @@ class MainActivity : AppCompatActivity() {
 
     fun pushInfoFragment(){
         pushFragment(InfoFragment())
+    }
+
+    fun pushBoxFragment(){
+        pushFragment(BoxFragment())
     }
 }

@@ -4,4 +4,5 @@
     <dimen name="height_20dp">20dp</dimen>
     <dimen name="margin_15dp">15dp</dimen>
     <dimen name="padding_20dp">20dp</dimen>
+    <dimen name="width_size200dp">200dp</dimen>
 </resources>
