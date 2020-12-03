@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.niranjan.mycoolapp.MainActivity
 import com.niranjan.mycoolapp.R
 import com.niranjan.mycoolapp.databinding.FragmentHomeBinding
@@ -34,8 +36,10 @@ class HomeFragment : Fragment() {
     private fun setRandomIconForImageView() {
         // button = findViewById(R.id.generateBtn)
 
-        binding.floatingActionButton.setOnClickListener {
-            (activity as MainActivity).pushInfoFragment()
+        binding.floatingActionButton.setOnClickListener { view ->
+            // (activity as MainActivity).pushInfoFragment()
+            // Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_infoFragment)
+            view.findNavController().navigate(R.id.action_homeFragment_to_infoFragment)
         }
 
         // 2. Kotlin Synthetic Library.

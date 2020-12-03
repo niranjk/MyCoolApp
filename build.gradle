@@ -24,3 +24,8 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+    // navigation version
+    navigationVersion = '2.3.0-alpha04'
+}
