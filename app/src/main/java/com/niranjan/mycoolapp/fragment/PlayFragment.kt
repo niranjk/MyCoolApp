@@ -1,0 +1,53 @@
+package com.niranjan.mycoolapp.fragment
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.niranjan.mycoolapp.R
+import com.niranjan.mycoolapp.databinding.FragmentPlayBinding
+import kotlinx.android.synthetic.main.fragment_play.*
+
+class PlayFragment : Fragment() {
+
+    lateinit var playBinding : FragmentPlayBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        playBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_play, container, false)
+        return playBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        submitBtn.setOnClickListener {
+            checkAnswers(it)
+        }
+    }
+
+
+    fun checkAnswers(view: View){
+        // get text of selected radio button
+        val answer = when {
+            radioBtn1.isChecked -> radioBtn1.text
+            radioBtn2.isChecked -> radioBtn2.text
+            radioBtn3.isChecked -> radioBtn3.text
+            radioBtn4.isChecked -> radioBtn4.text
+            else -> ""
+        }
+
+        // conditional navigation
+        if (answer.equals("Rome")){
+            view.findNavController().navigate(R.id.action_playFragment_to_gamewonFragment)
+        }else{
+            view.findNavController().navigate(R.id.action_playFragment_to_gamelostFragment)
+        }
+
+    }
+}

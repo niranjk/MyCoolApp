@@ -8,6 +8,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
+import com.niranjan.mycoolapp.databinding.ActivityMainBinding
 import com.niranjan.mycoolapp.fragment.BoxFragment
 import com.niranjan.mycoolapp.fragment.HomeFragment
 import com.niranjan.mycoolapp.fragment.InfoFragment
@@ -18,33 +21,23 @@ class MainActivity : AppCompatActivity() {
 
     // lateinit var button: Button
 
+    lateinit var bindingMain: ActivityMainBinding
+
     private var fragmentStack = ArrayList<Fragment?>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        // pushFragment(HomeFragment())
+        bindingMain = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        // first find the navController from your navigation host fragment
+        val navController = this.findNavController(R.id.navigationHost)
+        // second link the navController to action bar
+        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
-    /*
-    private fun pushFragment(newFragment: Fragment){
-        fragmentStack.clear()
-        supportFragmentManager.popBackStack(
-            null,
-            FragmentManager.POP_BACK_STACK_INCLUSIVE
-        )
-        supportFragmentManager
-            .beginTransaction().replace(R.id.fragment_container, newFragment)
-            .addToBackStack(null).commit()
-    }
-
-     */
-
-    fun pushInfoFragment(){
-        // pushFragment(InfoFragment())
-    }
-
-    fun pushBoxFragment(){
-        // pushFragment(BoxFragment())
+    override fun onSupportNavigateUp(): Boolean {
+        // find navController
+        val navController = this.findNavController(R.id.navigationHost)
+        return navController.navigateUp()
     }
 }

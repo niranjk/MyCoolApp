@@ -11,6 +11,9 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
+            android:id="@+id/action_homeFragment_to_playFragment"
+            app:destination="@id/playFragment" />
+        <action
             android:id="@+id/action_homeFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
     </fragment>
@@ -19,4 +22,29 @@
         android:name="com.niranjan.mycoolapp.fragment.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/gamelostFragment"
+        android:name="com.niranjan.mycoolapp.fragment.GamelostFragment"
+        android:label="fragment_gamelost"
+        tools:layout="@layout/fragment_gamelost" />
+    <fragment
+        android:id="@+id/gamewonFragment"
+        android:name="com.niranjan.mycoolapp.fragment.GamewonFragment"
+        android:label="fragment_gamewon"
+        tools:layout="@layout/fragment_gamewon" >
+    </fragment>
+    <fragment
+        android:id="@+id/playFragment"
+        android:name="com.niranjan.mycoolapp.fragment.PlayFragment"
+        android:label="fragment_play"
+        tools:layout="@layout/fragment_play" >
+        <action
+            android:id="@+id/action_playFragment_to_gamelostFragment"
+            app:destination="@id/gamelostFragment" />
+        <action
+            android:id="@+id/action_playFragment_to_gamewonFragment"
+            app:destination="@id/gamewonFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

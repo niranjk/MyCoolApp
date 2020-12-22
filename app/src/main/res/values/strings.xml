@@ -9,4 +9,14 @@
     <string name="done">Done</string>
     <string name="personal_information">Personal Information:</string>
     <string name="random_boxes">Random Boxes</string>
+    <string name="questions1">What is the capital city of Italy? </string>
+    <string name="rome">Rome</string>
+    <string name="milan">Milan</string>
+    <string name="torino">Torino</string>
+    <string name="florence">Florence</string>
+    <string name="submit">Submit</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="game_lost">Game Lost ;(</string>
+    <string name="play">Play</string>
+    <string name="millionare_game_title">Let\'s become a Millionare.</string>
 </resources>

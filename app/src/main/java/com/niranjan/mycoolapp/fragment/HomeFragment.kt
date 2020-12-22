@@ -1,19 +1,14 @@
 package com.niranjan.mycoolapp.fragment
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import com.niranjan.mycoolapp.MainActivity
+import androidx.navigation.ui.NavigationUI
 import com.niranjan.mycoolapp.R
 import com.niranjan.mycoolapp.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlin.random.Random
 
 class HomeFragment : Fragment() {
 
@@ -43,18 +38,8 @@ class HomeFragment : Fragment() {
         }
 
         // 2. Kotlin Synthetic Library.
-        generateBtn.setOnClickListener {
-
-            var randomNumber = Random.nextInt(4)+1
-            var drawable= when(randomNumber){
-                1 -> R.drawable.ic_random_1
-                2 -> R.drawable.ic_random_2
-                3 -> R.drawable.ic_random_3
-                4 -> R.drawable.ic_random_4
-                else -> R.drawable.ic_launcher_background
-            }
-            imageView.setImageResource(drawable)
-            Toast.makeText(context, "Random Icon Generated.", Toast.LENGTH_SHORT).show()
+        playBtn.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_playFragment)
         }
     }
 }
