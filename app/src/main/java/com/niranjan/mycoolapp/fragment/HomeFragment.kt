@@ -20,6 +20,7 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container,  false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -27,6 +28,16 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setRandomIconForImageView()
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.overflow_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, view!!.findNavController()) || super.onOptionsItemSelected(item)
+    }
+
 
     private fun setRandomIconForImageView() {
         // button = findViewById(R.id.generateBtn)

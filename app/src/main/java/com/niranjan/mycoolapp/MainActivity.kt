@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMain = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
         // first find the navController from your navigation host fragment
         val navController = this.findNavController(R.id.navigationHost)
         // second link the navController to action bar
