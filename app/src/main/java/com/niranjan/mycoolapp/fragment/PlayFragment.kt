@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.niranjan.mycoolapp.R
 import com.niranjan.mycoolapp.databinding.FragmentPlayBinding
+import com.niranjan.mycoolapp.utils.CoolConstants
 import kotlinx.android.synthetic.main.fragment_play.*
 
 class PlayFragment : Fragment() {
@@ -29,6 +30,12 @@ class PlayFragment : Fragment() {
         submitBtn.setOnClickListener {
             checkAnswers(it)
         }
+        /* classical arguments passing
+        val name = arguments?.getString(CoolConstants.ARGUMENTS_KEY_INT) // 0
+        val number = arguments?.getInt(CoolConstants.ARGUMENTS_KEY_INT) // null
+
+         */
+
     }
 
 
@@ -44,9 +51,9 @@ class PlayFragment : Fragment() {
 
         // conditional navigation
         if (answer.equals("Rome")){
-            view.findNavController().navigate(R.id.action_playFragment_to_gamewonFragment)
+            view.findNavController().navigate(PlayFragmentDirections.actionPlayFragmentToGamewonFragment(answer as String))
         }else{
-            view.findNavController().navigate(R.id.action_playFragment_to_gamelostFragment)
+            view.findNavController().navigate(PlayFragmentDirections.actionPlayFragmentToGamelostFragment(answer as String))
         }
 
     }

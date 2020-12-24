@@ -26,12 +26,19 @@
         android:id="@+id/gamelostFragment"
         android:name="com.niranjan.mycoolapp.fragment.GamelostFragment"
         android:label="fragment_gamelost"
-        tools:layout="@layout/fragment_gamelost" />
+        tools:layout="@layout/fragment_gamelost" >
+        <argument
+            android:name="ans"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/gamewonFragment"
         android:name="com.niranjan.mycoolapp.fragment.GamewonFragment"
         android:label="fragment_gamewon"
         tools:layout="@layout/fragment_gamewon" >
+        <argument
+            android:name="ans"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/playFragment"

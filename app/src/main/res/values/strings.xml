@@ -19,4 +19,7 @@
     <string name="game_lost">Game Lost ;(</string>
     <string name="play">Play</string>
     <string name="millionare_game_title">Let\'s become a Millionare.</string>
+    <string name="incorrect_answer">Incorrect Answer:</string>
+    <string name="answer">Answer</string>
+    <string name="correct_answer">Correct Answer:</string>
 </resources>

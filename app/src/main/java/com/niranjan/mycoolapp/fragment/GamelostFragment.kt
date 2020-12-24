@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.niranjan.mycoolapp.R
+import kotlinx.android.synthetic.main.fragment_gamelost.*
 
 class GamelostFragment : Fragment() {
 
@@ -15,5 +16,10 @@ class GamelostFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_gamelost, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val args = arguments?.let { GamelostFragmentArgs.fromBundle(it) }
+        lost_answer.text = args?.ans ?:"*****"
+    }
 
 }

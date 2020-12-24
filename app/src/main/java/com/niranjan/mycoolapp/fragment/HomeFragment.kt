@@ -8,11 +8,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.niranjan.mycoolapp.R
 import com.niranjan.mycoolapp.databinding.FragmentHomeBinding
+import com.niranjan.mycoolapp.utils.CoolConstants
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
     lateinit var binding : FragmentHomeBinding
+    lateinit var bundle: Bundle
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +29,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRandomIconForImageView()
+        /* classical argument passing
+        bundle = Bundle()
+        bundle.putString(CoolConstants.ARGUMENTS_KEY_STRING, "valueString")
+         */
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -35,7 +41,7 @@ class HomeFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, view!!.findNavController()) || super.onOptionsItemSelected(item)
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController()) || super.onOptionsItemSelected(item)
     }
 
 
@@ -50,6 +56,11 @@ class HomeFragment : Fragment() {
 
         // 2. Kotlin Synthetic Library.
         playBtn.setOnClickListener {
+            /* classical arguments passing
+            val fragment = PlayFragment()
+            fragment.arguments = bundle
+
+             */
             it.findNavController().navigate(R.id.action_homeFragment_to_playFragment)
         }
     }
