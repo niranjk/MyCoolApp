@@ -22,4 +22,5 @@
     <string name="incorrect_answer">Incorrect Answer:</string>
     <string name="answer">Answer</string>
     <string name="correct_answer">Correct Answer:</string>
+    <string name="share_success_text">Share Success </string>
 </resources>
