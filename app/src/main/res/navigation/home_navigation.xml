@@ -47,10 +47,18 @@
         tools:layout="@layout/fragment_play" >
         <action
             android:id="@+id/action_playFragment_to_gamelostFragment"
-            app:destination="@id/gamelostFragment" />
+            app:destination="@id/gamelostFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_in_right" />
         <action
             android:id="@+id/action_playFragment_to_gamewonFragment"
             app:destination="@id/gamewonFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_in_right"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
     </fragment>
