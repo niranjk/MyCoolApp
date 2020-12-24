@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
@@ -25,18 +26,35 @@ class MainActivity : AppCompatActivity() {
 
     private var fragmentStack = ArrayList<Fragment?>()
 
+    lateinit var drawerLayout: DrawerLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMain = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        // initialize drawerlayout from binding
+        drawerLayout = bindingMain.drawerLayout
         // first find the navController from your navigation host fragment
         val navController = this.findNavController(R.id.navigationHost)
         // second link the navController to action bar
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        // we have to add the drawerLayout as second parameter
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+
+        // unlock the swipe oly on start Destination
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            if (destination.id == controller.graph.startDestination){
+                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+            }else {
+                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+            }
+        }
+        // hook the navigation UI up to the navigation view (navView)
+        NavigationUI.setupWithNavController(bindingMain.navView, navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
         // find navController
         val navController = this.findNavController(R.id.navigationHost)
-        return navController.navigateUp()
+        // replace navController.navigateUp() with NavigationUI.navigateUP with drawerLayout parameter
+        return NavigationUI.navigateUp(navController, drawerLayout)
     }
 }
