@@ -3,6 +3,7 @@ package com.niranjan.mycoolapp
 import android.database.DatabaseUtils
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -16,6 +17,7 @@ import com.niranjan.mycoolapp.fragment.BoxFragment
 import com.niranjan.mycoolapp.fragment.HomeFragment
 import com.niranjan.mycoolapp.fragment.InfoFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -49,6 +51,8 @@ class MainActivity : AppCompatActivity() {
         }
         // hook the navigation UI up to the navigation view (navView)
         NavigationUI.setupWithNavController(bindingMain.navView, navController)
+        Log.i("MainActivity", "Default Android Logging API : onCreate called")
+        Timber.i("Timber Logging API : onCreate called ")
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -56,5 +60,11 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.navigationHost)
         // replace navController.navigateUp() with NavigationUI.navigateUP with drawerLayout parameter
         return NavigationUI.navigateUp(navController, drawerLayout)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("MainActivity"," Default Android Logging API : onStart called ")
+        Timber.i("Timber Logging API : onStart called ")
     }
 }
