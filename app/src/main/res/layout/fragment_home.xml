@@ -25,8 +25,9 @@
             tools:text="Let's become a Millionare. " />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:src="@drawable/ic_random_1"
             android:layout_margin="@dimen/margin_15dp"
             app:layout_constraintBottom_toTopOf="@+id/playBtn"
@@ -38,22 +39,61 @@
             android:id="@+id/playBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="332dp"
+            android:layout_margin="@dimen/margin_40dp"
             android:text="@string/play"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTxt" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+        <TextView
+            android:id="@+id/amountSelectedTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_amount"
+            android:textStyle="bold"
+            android:textSize="@dimen/textSize_30sp"
+            android:textColor="@color/teal_700"
+            app:layout_constraintTop_toBottomOf="@id/playBtn"
+            android:layout_marginTop="@dimen/margin_40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/amountSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amount"
+            android:textSize="@dimen/textSize_30sp"
+            android:textColor="@color/purple_200"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/amountSelectedTitle"
+            android:layout_marginTop="@dimen/margin_40dp"
+            android:layout_marginStart="@dimen/margin_40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/amountValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="@dimen/textSize_50sp"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/amountSelected"
+            app:layout_constraintBottom_toBottomOf="@id/amountSelected"
+            android:layout_marginStart="@dimen/margin_40dp"
+            app:layout_constraintStart_toEndOf="@id/amountSelected"
+            />
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/playBtn"
-            app:srcCompat="@android:drawable/ic_dialog_info" />
+            app:layout_constraintStart_toEndOf="@id/amountValue"
+            app:layout_constraintTop_toTopOf="@id/amountSelected"
+            app:layout_constraintBottom_toBottomOf="@id/amountSelected"
+            app:srcCompat="@android:drawable/ic_input_add" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

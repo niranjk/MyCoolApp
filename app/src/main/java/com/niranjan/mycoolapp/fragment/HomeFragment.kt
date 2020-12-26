@@ -15,6 +15,7 @@ class HomeFragment : Fragment() {
 
     lateinit var binding : FragmentHomeBinding
     lateinit var bundle: Bundle
+    var amount: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,9 +50,7 @@ class HomeFragment : Fragment() {
         // button = findViewById(R.id.generateBtn)
 
         binding.floatingActionButton.setOnClickListener { view ->
-            // (activity as MainActivity).pushInfoFragment()
-            // Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_infoFragment)
-            view.findNavController().navigate(R.id.action_homeFragment_to_infoFragment)
+            amountClicked()
         }
 
         // 2. Kotlin Synthetic Library.
@@ -63,5 +62,10 @@ class HomeFragment : Fragment() {
              */
             it.findNavController().navigate(R.id.action_homeFragment_to_playFragment)
         }
+    }
+
+    private fun amountClicked() {
+        amount++
+        binding.amountValue.text = amount.toString()
     }
 }

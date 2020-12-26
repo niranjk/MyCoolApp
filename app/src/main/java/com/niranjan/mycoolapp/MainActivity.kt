@@ -3,6 +3,7 @@ package com.niranjan.mycoolapp
 import android.database.DatabaseUtils
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
@@ -16,6 +17,7 @@ import com.niranjan.mycoolapp.databinding.ActivityMainBinding
 import com.niranjan.mycoolapp.fragment.BoxFragment
 import com.niranjan.mycoolapp.fragment.HomeFragment
 import com.niranjan.mycoolapp.fragment.InfoFragment
+import com.niranjan.mycoolapp.utils.CoolTimer
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import kotlin.random.Random
@@ -62,9 +64,36 @@ class MainActivity : AppCompatActivity() {
         return NavigationUI.navigateUp(navController, drawerLayout)
     }
 
+    // lifecycle methods
+
     override fun onStart() {
         super.onStart()
         Log.i("MainActivity"," Default Android Logging API : onStart called ")
-        Timber.i("Timber Logging API : onStart called ")
+        Timber.i("Timber Logging : onStart called ")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.i("Timber Logging : onResume called ")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Timber.i("Timber Logging : onPause called ")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Timber.i("Timber Logging : onStop called ")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.i("Timber Logging : onDestroy called ")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Timber.i("Timber Logging : onRestart called ")
     }
 }
