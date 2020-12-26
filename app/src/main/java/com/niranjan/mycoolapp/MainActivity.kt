@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var drawerLayout: DrawerLayout
 
+    lateinit var timer: CoolTimer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMain = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -39,6 +41,10 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = bindingMain.drawerLayout
         // first find the navController from your navigation host fragment
         val navController = this.findNavController(R.id.navigationHost)
+
+        // initalize timer
+        timer = CoolTimer(this.lifecycle)
+
         // second link the navController to action bar
         // we have to add the drawerLayout as second parameter
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
@@ -70,6 +76,7 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         Log.i("MainActivity"," Default Android Logging API : onStart called ")
         Timber.i("Timber Logging : onStart called ")
+        // timer.startTimer()
     }
 
     override fun onResume() {
@@ -85,6 +92,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         Timber.i("Timber Logging : onStop called ")
+        // timer.stopTimer()
     }
 
     override fun onDestroy() {
