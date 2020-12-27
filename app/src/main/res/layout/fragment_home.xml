@@ -75,7 +75,7 @@
             android:id="@+id/amountValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            tools:text="0"
             android:textSize="@dimen/textSize_50sp"
             android:textColor="@color/teal_700"
             android:textStyle="bold"

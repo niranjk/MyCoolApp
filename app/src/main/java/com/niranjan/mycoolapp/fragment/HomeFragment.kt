@@ -10,7 +10,9 @@ import com.niranjan.mycoolapp.R
 import com.niranjan.mycoolapp.databinding.FragmentHomeBinding
 import com.niranjan.mycoolapp.utils.CoolConstants
 import kotlinx.android.synthetic.main.fragment_home.*
+import timber.log.Timber
 
+const val AMOUNT_KEY = "AMOUNT_KEY"
 class HomeFragment : Fragment() {
 
     lateinit var binding : FragmentHomeBinding
@@ -24,6 +26,10 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container,  false)
         setHasOptionsMenu(true)
+        if (savedInstanceState!= null) {
+            amount = savedInstanceState.getInt(AMOUNT_KEY)
+        }
+
         return binding.root
     }
 
@@ -34,6 +40,7 @@ class HomeFragment : Fragment() {
         bundle = Bundle()
         bundle.putString(CoolConstants.ARGUMENTS_KEY_STRING, "valueString")
          */
+        binding.amountValue.text = amount.toString()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -62,6 +69,18 @@ class HomeFragment : Fragment() {
              */
             it.findNavController().navigate(R.id.action_homeFragment_to_playFragment)
         }
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        Timber.i("onStart called")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(AMOUNT_KEY, amount)
+        Timber.i("onsavedInstanceState called")
     }
 
     private fun amountClicked() {
