@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.navigationHost)
 
         // initalize timer
-        timer = CoolTimer(this.lifecycle)
+        // timer = CoolTimer(this.lifecycle)
 
         // second link the navController to action bar
         // we have to add the drawerLayout as second parameter

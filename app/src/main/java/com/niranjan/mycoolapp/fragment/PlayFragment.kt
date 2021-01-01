@@ -6,15 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.niranjan.mycoolapp.R
 import com.niranjan.mycoolapp.databinding.FragmentPlayBinding
 import com.niranjan.mycoolapp.utils.CoolConstants
+import com.niranjan.mycoolapp.viewmodel.PlayViewModel
 import kotlinx.android.synthetic.main.fragment_play.*
+import timber.log.Timber
 
 class PlayFragment : Fragment() {
 
     lateinit var playBinding : FragmentPlayBinding
+    private lateinit var viewModel: PlayViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +27,9 @@ class PlayFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         playBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_play, container, false)
+        Timber.i("ViewModelProvider called..... ")
+        viewModel = ViewModelProvider(this).get(PlayViewModel::class.java)
+        // viewModel = PlayViewModel()
         return playBinding.root
     }
 
