@@ -67,7 +67,7 @@ class HomeFragment : Fragment() {
             fragment.arguments = bundle
 
              */
-            it.findNavController().navigate(R.id.action_homeFragment_to_playFragment)
+            it.findNavController().navigate(R.id.action_homeFragment_to_gameFragment)
         }
     }
 

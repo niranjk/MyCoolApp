@@ -41,9 +41,7 @@ class PlayFragment : Fragment() {
         /* classical arguments passing
         val name = arguments?.getString(CoolConstants.ARGUMENTS_KEY_INT) // 0
         val number = arguments?.getInt(CoolConstants.ARGUMENTS_KEY_INT) // null
-
          */
-
     }
 
 

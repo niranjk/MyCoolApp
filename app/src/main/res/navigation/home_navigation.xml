@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
     </fragment>
     <fragment
         android:id="@+id/infoFragment"
@@ -67,4 +70,21 @@
         android:name="com.niranjan.mycoolapp.fragment.RulesFragment"
         android:label="fragment_rules"
         tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.niranjan.mycoolapp.fragment.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.niranjan.mycoolapp.fragment.ScoreFragment"
+        android:label="ScoreFragment" >
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
 </navigation>
