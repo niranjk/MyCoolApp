@@ -27,8 +27,9 @@ android {
     }
 
     // Enable Data Binding
-    dataBinding{
-        enabled = true
+    buildFeatures{
+        dataBinding true
+        viewBinding true
     }
 
     compileOptions {
