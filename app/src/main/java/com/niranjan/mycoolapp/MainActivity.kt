@@ -18,7 +18,6 @@ import com.niranjan.mycoolapp.fragment.BoxFragment
 import com.niranjan.mycoolapp.fragment.HomeFragment
 import com.niranjan.mycoolapp.fragment.InfoFragment
 import com.niranjan.mycoolapp.utils.CoolTimer
-import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import kotlin.random.Random
 

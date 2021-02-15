@@ -29,12 +29,12 @@ class NameofClass() : OuterClass(){
 
 }
 
-private class PrivateClass(){
+class PrivateClass(){
 
     var x: Int = 12
 
-    private fun method(){
-        x = 24
+    fun square(value: Int) : Int{
+        return value*value
     }
 
 }
