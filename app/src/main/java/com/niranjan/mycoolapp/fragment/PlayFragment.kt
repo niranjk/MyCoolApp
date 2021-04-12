@@ -13,7 +13,6 @@ import com.niranjan.mycoolapp.R
 import com.niranjan.mycoolapp.databinding.FragmentPlayBinding
 import com.niranjan.mycoolapp.utils.CoolConstants
 import com.niranjan.mycoolapp.viewmodel.PlayViewModel
-import kotlinx.android.synthetic.main.fragment_play.*
 import timber.log.Timber
 
 class PlayFragment : Fragment() {
@@ -35,9 +34,7 @@ class PlayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        submitBtn.setOnClickListener {
-            checkAnswers(it)
-        }
+
         /* classical arguments passing
         val name = arguments?.getString(CoolConstants.ARGUMENTS_KEY_INT) // 0
         val number = arguments?.getInt(CoolConstants.ARGUMENTS_KEY_INT) // null
@@ -48,10 +45,7 @@ class PlayFragment : Fragment() {
     fun checkAnswers(view: View){
         // get text of selected radio button
         val answer = when {
-            radioBtn1.isChecked -> radioBtn1.text
-            radioBtn2.isChecked -> radioBtn2.text
-            radioBtn3.isChecked -> radioBtn3.text
-            radioBtn4.isChecked -> radioBtn4.text
+
             else -> ""
         }
 
