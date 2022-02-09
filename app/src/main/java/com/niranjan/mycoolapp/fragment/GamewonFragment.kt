@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import com.niranjan.mycoolapp.MainActivity
 import com.niranjan.mycoolapp.R
 import com.niranjan.mycoolapp.databinding.FragmentGamewonBinding
-import kotlinx.android.synthetic.main.fragment_gamewon.*
 import android.content.Intent as Intent
 
 
@@ -29,7 +28,7 @@ class GamewonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         args = arguments?.let { GamewonFragmentArgs.fromBundle(it) }
-        correct_answer.text = args?.ans?: "****"
+        //correct_answer.text = args?.ans?: "****"
     }
 
 

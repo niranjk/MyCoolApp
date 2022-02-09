@@ -9,7 +9,6 @@ import androidx.navigation.ui.NavigationUI
 import com.niranjan.mycoolapp.R
 import com.niranjan.mycoolapp.databinding.FragmentHomeBinding
 import com.niranjan.mycoolapp.utils.CoolConstants
-import kotlinx.android.synthetic.main.fragment_home.*
 import timber.log.Timber
 
 const val AMOUNT_KEY = "AMOUNT_KEY"
@@ -61,6 +60,7 @@ class HomeFragment : Fragment() {
         }
 
         // 2. Kotlin Synthetic Library.
+        /*
         playBtn.setOnClickListener {
             /* classical arguments passing
             val fragment = PlayFragment()
@@ -69,6 +69,8 @@ class HomeFragment : Fragment() {
              */
             it.findNavController().navigate(R.id.action_homeFragment_to_gameFragment)
         }
+
+         */
     }
 
 
