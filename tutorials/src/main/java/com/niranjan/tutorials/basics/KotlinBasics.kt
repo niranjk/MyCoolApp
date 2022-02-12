@@ -8,12 +8,14 @@ fun main() {
 
     // Collections
     val immutable_collection = listOf<String>("a", "b", "c")
-    var mutable_collection = setOf<Int>(1, 2, 3)
+    var mutable_collection = hashSetOf<Int>(1, 2, 3)
 
     immutable_collection.forEach {
         print(it+"-")
+        print("\n")
     }
+    mutable_collection.plusElement(4)
     mutable_collection.forEach {
-        print(it.toString()+"@")
+        print(it.toString()+" @")
     }
 }

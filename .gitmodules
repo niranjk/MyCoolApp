@@ -1,0 +1,3 @@
+[submodule "khatri_library"]
+	path = khatri_library
+	url = https://github.com/niranjk/khatri_library.git
