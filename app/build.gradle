@@ -48,6 +48,7 @@ dependencies {
 
     // local binary dependencies
     implementation project(':mockk')
+    implementation project(':khatri_library')
 
     // remote binary dependencies
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

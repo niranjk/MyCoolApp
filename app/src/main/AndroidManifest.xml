@@ -21,11 +21,11 @@
         </activity>
         <service android:name=".services.MyService" />
         <receiver android:name=".receivers.MyBroadcastReceiver"/>
-        <provider
-            android:authorities="com.niranjan.mycoolapp.providers.MyContentProvider"
-            android:name=".providers.MyContentProvider"
-            android:exported="false"
-            />
+<!--        <provider-->
+<!--            android:authorities="com.niranjan.mycoolapp.providers.MyContentProvider"-->
+<!--            android:name=".providers.MyContentProvider"-->
+<!--            android:exported="false"-->
+<!--            />-->
     </application>
 
 </manifest>

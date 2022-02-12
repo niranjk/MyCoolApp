@@ -13,6 +13,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/khatri_library" />
             <option value="$PROJECT_DIR$/mockk" />
             <option value="$PROJECT_DIR$/tutorials" />
           </set>

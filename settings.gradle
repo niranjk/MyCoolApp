@@ -2,3 +2,4 @@ include ':app'
 rootProject.name = "MyCoolApp"
 include ':mockk'
 include ':tutorials'
+include ':khatri_library'
