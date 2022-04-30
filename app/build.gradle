@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.niranjan.mycoolapp"
-        minSdkVersion 22
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -41,13 +41,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dynamicFeatures = [':tutorials']
 }
 
 dependencies {
 
     // local binary dependencies
-    implementation project(':mockk')
     implementation project(':khatri_library')
 
     // remote binary dependencies
@@ -83,13 +81,13 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_kotlin_coroutines"
 
     // koin
+    // Koin Core features
+    implementation "io.insert-koin:koin-core:$koin_version"
+    // Koin Test features
+    testImplementation "io.insert-koin:koin-test:$koin_version"
     // Koin main features for Android (Scope,ViewModel ...)
-    implementation "io.insert-koin:koin-android:${koin_version}"
+    implementation "io.insert-koin:koin-android:$koin_version"
     // Koin Android - experimental builder extensions
-    implementation "io.insert-koin:koin-android-ext:${koin_version}"
-    // Koin for Jetpack WorkManager
-    implementation "io.insert-koin:koin-androidx-workmanager:${koin_version}"
-
 
     // test configuration
     testImplementation 'junit:junit:4.+'
